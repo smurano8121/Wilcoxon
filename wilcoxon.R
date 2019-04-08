@@ -8,10 +8,11 @@ while (i <= 10) {
   #print(group2)
   result <- wilcox_test(c(group1,group2) ~ factor(c(rep("group1",length(group1)),rep("group2",length(group2)))),distribution="exact")
   #result <- wilcox.test(group1,group2)
-  #print(i)
+  print(i)
   print(result)
   #write.csv(group1$i, "pvalue.csv")
-  #write.csv(c.result$p.value, "pvalue.csv")
+  write.table(pvalue(result), "C:/Users/smura/develop/R言語/wilcoxon/pvalue.csv", ,row.names=F, col.names=F, append=T)
+  #write.csv(c.result$p.value, "C:/Users/smura/develop/R言語/wilcoxon/pvalue.csv")
   i <- i + 1
 }
 
